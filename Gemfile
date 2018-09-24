@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+gem 'simple_form'
+#Add devise gem. User Authentication gem file
+gem 'devise'
 #Twitter component 
 gem 'bootstrap', '~> 4.1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
