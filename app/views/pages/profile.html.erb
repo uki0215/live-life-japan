@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-12 jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
+        <h1 class="display-4"><%= @username %></h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
 </div>
@@ -16,11 +16,15 @@
         </div>
     </div>
     <div class="col-sm-6">
+      <%= render '/components/post_form' %>
+      
+      <% for @p in @posts %>
         <div class="card card-default">
             <div class="card-body">
-              <p>Tweet</p>
+              <p><%= @p.content %></p>
             </div>
         </div>
+      <% end %>
     </div>
     <div class="col-sm-3">
         <div class="card card-default">
@@ -28,12 +32,7 @@
               <p>Who is your follow</p>
             </div>
         </div>
-    </div>
-</div>
-<br>
-<!-- row 2 -->
-<div class="row">
-    <div class="col-sm-3 offset-sm-9">
+        <br>
         <div class="card card-default">
             <div class="card-body">
               <p>Trends</p>

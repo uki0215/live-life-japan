@@ -1,2 +1,9 @@
-<h1>Pages#explore</h1>
-<p>Find me in app/views/pages/explore.html.erb</p>
+ <div class="col-sm-6">
+    <% for @p in @posts %>
+    <div class="card card-default">
+     <div class="card-body">
+       <p><%= @p.content %></p>
+     </div>
+    </div>
+    <% end %>
+</div>
