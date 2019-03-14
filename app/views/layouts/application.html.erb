@@ -9,10 +9,8 @@
 <body>
 
 <%= render '/layouts/nav' %>
-<br>
 <div class='container'>
-  <span class="notice"><%= notice %></span>
-  <span class="alert"><%= alert %></span>
+  <%= alert %>
   <%= yield %>  
 </div>
 

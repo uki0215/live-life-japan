@@ -25,4 +25,5 @@ class PagesController < ApplicationController
   def explore
     @posts = Post.all
   end
+  
 end

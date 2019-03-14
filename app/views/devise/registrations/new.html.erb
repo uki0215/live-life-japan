@@ -1,32 +1,52 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <h5 class="card-header">Sign up</h5>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="field">
+          <%= f.label :username %><br />
+          <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+      </div>
+      
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+        </div>
+  
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+   </div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+   <div class="col-sm-6">
+    <h4>Creating the login form and authenticating the user</h4>
+     <p>For logging in the account, I'm using a SessionsController to handle all the sign in logic. This controller has a new, create and destroy method to show the login form, authenticate the user and logs it back out.
+      Here's my login form:.</p>
+     <hr>
+     <p>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+     <hr>
+     <p>For logging in the account, I'm using a SessionsController to handle all the sign in logic. This controller has a new, create and destroy method to show the login form, authenticate the user and logs it back out.
+      Here's my login form:.</p>
+   </div>
+</div>
+<br><br><br><br>
+<%= render '/layouts/footer' %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

@@ -17,7 +17,20 @@ class PostsController < ApplicationController
     end
     
     private
-    def post_params 
-        params.require(:post).permit(:user_id, :content)
+        def post_params 
+            params.require(:post).permit(:user_id, :content)
+        end
+    
+    def edit
+        
     end
-end
+    
+    def update
+    
+    end
+    
+    def destroy 
+        @post.destroy
+        redirect_to root_path, :notice => "This post is deleted"
+    end
+  end

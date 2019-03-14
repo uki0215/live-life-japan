@@ -1,40 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#'">Radio</a>
+<nav class="navbar navbar-expand-lg">
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+ 
+  <div class="collapse navbar-collapse container" id="navbarSupportedContent">
+     
+    <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/home"><img src='/icons/home.png'>&ensp;Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/explore">Explore</a>
+        <a class="nav-link" href="/explore"><img src='/icons/momentum.png'>&ensp;Moments</a>
       </li>
-     
+       <li class="nav-item">
+        <a class="nav-link" href="/albums"><img src='/icons/photo-camera.png'>&ensp;Albums</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/playlist"><img src='/icons/music-album1.png'>&ensp;Playlist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/explore"><img src='/icons/ntf.png'>&ensp;Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/explore"><img src='/icons/msg.png'>&ensp;Messages</a>
+      </li>
       </ul>
       <ul class="navbar-nav navbar-right">
-            <li class="nav-item">
-        <a class="nav-link" href="#">Tweet</a>
-      </li>
-           <li class="nav-item dropdown">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2 nav-link-search-text" type="search" placeholder="search" aria-label="Search">
+        </form>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= current_user.username %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/user/<%= current_user.username %>">Profile</a>
           <a class="dropdown-item" href="#">Help</a>
-          <a class="dropdown-item"><%= link_to ('Edit profile'), edit_user_registration_path %></a>
-          <a class="dropdown-item"><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></a>
+          <%= link_to ('Edit profile'), edit_user_registration_path, class:"dropdown-item" %>
+          <%= link_to('Log out', destroy_user_session_path, :method => :delete , class:"dropdown-item") %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Other</a>
         </div>
+        <li class="nav-item">
+          <button type="button" class="btn my-2 my-sm-0">Oops!!!</button>
+        </li>
       </li>
       </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
+<hr>

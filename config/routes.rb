@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home' # override default routes.
   get '/user/:id' => 'pages#profile'
   get '/explore' => 'pages#explore'
-
+  get '/albums' => 'pages#albums'
+  get '/playlist' => 'pages#playlist'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
